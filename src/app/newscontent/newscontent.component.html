@@ -1,0 +1,676 @@
+ <!-- ##### Hero Area Start ##### -->
+
+
+ <div class="hero-area">
+   <div class="container">
+
+
+     <div class="row align-items-center">
+       <div class="col-12 col-lg-8">
+         <!-- Breaking News Widget -->
+         <div class="breaking-news-area d-flex align-items-center">
+           <div class="news-title">
+             <p>Breaking News</p>
+           </div>
+           <div id="breakingNewsTicker" class="ticker">
+             <ul>
+               <li *ngFor="let Br of BrDetail"><a href="#"> {{Br.Caption}} </a></li>
+
+             </ul>
+           </div>
+         </div>
+
+         <!-- Breaking News Widget -->
+         <div class="breaking-news-area d-flex align-items-center mt-15">
+           <div class="news-title title2">
+             <p>International</p>
+           </div>
+           <div id="internationalTicker" class="ticker">
+             <ul>
+               <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+               <li><a href="#">Welcome to Colorlib Family.</a></li>
+               <li><a href="#">Nam eu metus sitsit amet, consec!</a></li>
+             </ul>
+           </div>
+         </div>
+       </div>
+
+       <!-- Hero Add -->
+       <div class="col-12 col-lg-4">
+         <div class="hero-add">
+           <a href="#"><img src="../assets/img/bg-img/hero-add.gif" alt=""></a>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+ <!-- ##### Hero Area End ##### -->
+ 
+ <!-- ##### Featured Post Area Start ##### -->
+ <div class="featured-post-area">
+   <div class="container">
+     <div class="row">
+       <div class="col-12 col-md-6 col-lg-8">
+         <div class="row">
+
+           <!-- Big News1 Post -->
+
+           <div class="col-12 col-lg-7" *ngFor="let Big1 of _BigNews1">
+             <div class="single-blog-post featured-post">
+               
+                 
+
+              <mat-video title="My Tutorial Title" src="http://static.videogular.com/assets/videos/videogular.mp4" [autoplay]="true" [preload]="true" [fullscreen]="true" [download]="false" color="accent" spinner="spin" poster="image.jpg">
+                <source matVideoSource src="tutorial.mp4" type="video/mp4">
+                <source src="tutorial.webm" type="video/webm">
+                <track matVideoTrack src="subtitles_en.vtt" kind="subtitles" srclang="en" label="English">
+                <track src="subtitles_no.vtt" kind="subtitles" srclang="no" label="Norwegian">
+              </mat-video>
+                 
+              
+              
+               <div class="post-data">
+                 <a href="#" class="post-catagory">Finance</a>
+                 <div>
+                   <a href="#" class="post-title">
+                     <h2 (click)="getnewsbyId(Big1._id)">{{Big1.Caption}}</h2>
+                   </a>
+                   <div class="post-meta">
+                     <p class="post-author">By <a href="#">Christinne Williams</a></p>
+                     <p class="post-excerp" [innerHTML]="morenews"> 
+                         <a _ngcontent-c3="" class="post-author" href="#">more</a>   
+                    
+                    </p>
+                     <!-- Post Like & Post Comment -->
+                     <div class="d-flex align-items-center">
+                       <a href="#" class="post-like"><img src="../assets/img/core-img/like.png" alt="">
+                         <span>392</span></a>
+                       <a href="#" class="post-comment"><img src="../assets/img/core-img/chat.png" alt="">
+                         <span>10</span></a>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+           <div class="col-12 col-lg-5">
+             <!-- Big News 2 Post -->
+             
+               <div class="single-blog-post featured-post-2"  *ngFor="let Big2 of _BigNews2">
+                 <div class="post-thumb" *ngFor="let Big2Img of Big2.finImages">
+                   <a href="#" *ngFor="let b2img of Big2Img.Imagepath">
+
+                     <img [src]="b2img" width="100px" />
+                   </a>
+                 </div>
+
+                 <div class="post-data" *ngFor="let NCat of Big2.NewsUnique">
+                   <a href="#" class="post-catagory">{{NCat.NCategory}}</a>
+                   <div>
+                     <a href="#" class="post-title">
+                       <h2 (click)="getnewsbyId(Big1._id)">{{Big2.Caption}}</h2>
+                     </a>
+                     <div class="post-meta">
+                       <p class="post-author">By <a href="#">Christinne Williams</a></p>
+                       <p class="post-excerp"> </p>
+                       <!-- Post Like & Post Comment -->
+                       <div class="d-flex align-items-center">
+                         <a href="#" class="post-like"><img src="../assets/img/core-img/like.png" alt="">
+                           <span>392</span></a>
+                         <a href="#" class="post-comment"><img src="../assets/img/core-img/chat.png" alt="">
+                           <span>10</span></a>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+               
+
+               
+             </div>
+             <div class="single-blog-post featured-post-2" *ngFor="let Big3 of _BigNews3">
+              <div class="post-thumb" *ngFor="let Big3Img of Big3.finImages">
+                <a href="#" *ngFor="let b3img of Big3Img.Imagepath">
+                  <img [src]="b3img" width="100px" />
+                </a>
+              </div>
+ 
+              <div class="post-data"  *ngFor="let NCat of Big3.NewsUnique">
+                <a href="#" class="post-catagory">{{NCat.NCategory}}</a>
+                <div>
+                  <a href="#" class="post-title">
+                    <h2 (click)="getnewsbyId(Big1._id)">{{Big3.Caption}}</h2>
+                  </a>
+                  <div class="post-meta">
+                    <p class="post-author">By <a href="#">Christinne Williams</a></p>
+                    <p class="post-excerp"> </p>
+                    <!-- Post Like & Post Comment -->
+                    <div class="d-flex align-items-center">
+                      <a href="#" class="post-like"><img src="../assets/img/core-img/like.png" alt="">
+                        <span>392</span></a>
+                      <a href="#" class="post-comment"><img src="../assets/img/core-img/chat.png" alt="">
+                        <span>10</span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+ 
+            </div>
+
+           </div>
+         </div>
+       </div>
+     
+        
+          
+       <div class="col-12 col-md-6 col-lg-4">
+         <marquee direction="up" loop="">
+         <!-- Single Featured Post Corner for BUSINESS -->
+         <div class="single-blog-post small-featured-post d-flex" *ngFor="let bs of FinCorner">
+           <div class="post-thumb" *ngFor="let mgBs of bs.finImages">
+             <a href="#" *ngFor="let mg of mgBs.Imagepath">
+               <img [src]="mg" alt=""></a>
+           </div>
+           <div class="post-data">
+             <a href="#" class="post-catagory">Bussiness</a>
+             <div class="post-meta">
+               <a href="#" class="post-title">
+
+                 <h6 (click)="getnewsbyId(bs._id)">{{bs.Caption}}</h6>
+               </a>
+               <p class="post-date"><span>{{bs.NewsTime}}</span> | <span>{{bs.NewsDate}}</span></p>
+
+             </div>
+           </div>
+         </div>
+       
+
+  
+         <!-- Single Featured Post for Sports Corner -->
+       
+         <div class="single-blog-post small-featured-post d-flex" *ngFor="let sp of SportCorner">
+           <div class="post-thumb" *ngFor="let spImg of sp.finImages">
+             <a href="#" *ngFor="let Img of spImg.Imagepath"><img [src]="Img" alt=""></a>
+           </div>
+           <div class="post-data">
+             <a href="#" class="post-catagory">Sports</a>
+             <div class="post-meta">
+               <a href="#" class="post-title">
+
+                 <h6 (click)="getnewsbyId(sp._id)">{{sp.Caption}}</h6>
+               </a>
+               <p class="post-date"><span>{{sp.NewsTime}}</span> | <span>{{sp.NewsDate}}</span></p>
+
+             </div>
+           </div>
+         </div>
+
+         <!-- Single Featured Post for Tech News for Corner  -->
+         <div class="single-blog-post small-featured-post d-flex" *ngFor="let tch of TechCorner">
+           <div class="post-thumb" *ngFor="let tcImg of tch.finImages">
+             <a href="#" *ngFor="let Img of tcImg.Imagepath"><img [src]="Img" alt=""></a>
+           </div>
+           <div class="post-data">
+             <a href="#" class="post-catagory">Tech News</a>
+             <div class="post-meta">
+               <a href="#" class="post-title">
+
+                 <h6 (click)="getnewsbyId(tch._id)">{{tch.Caption}}</h6>
+               </a>
+               <p class="post-date"><span>{{tch.NewsTime}}</span> | <span>{{tch.NewsDate}}</span></p>
+
+             </div>
+           </div>
+         </div>
+
+         <!-- Single Featured Post for Auto Corner-->
+         <div class="single-blog-post small-featured-post d-flex" *ngFor="let auto of AutoCorner">
+           <div class="post-thumb" *ngFor="let atImg of auto.finImages">
+             <a href="#" *ngFor="let Img of atImg.Imagepath"><img [src]="Img" alt=""></a>
+           </div>
+           <div class="post-data">
+             <a href="#" class="post-catagory">Auto News</a>
+             <div class="post-meta">
+               <a href="#" class="post-title">
+
+                 <h6 (click)="getnewsbyId(auto._id)">{{auto.Caption}}</h6>
+               </a>
+               <p class="post-date"><span>{{auto.NewsTime}}</span> | <span>{{auto.NewsDate}}</span></p>
+
+             </div>
+           </div>
+         </div>
+
+
+         <!-- Single Featured Post for ART corner-->
+         <div class="single-blog-post small-featured-post d-flex" *ngFor="let artC of ArtCorner">
+           <div class="post-thumb" *ngFor="let artImg of artC.finImages">
+             <a href="#" *ngFor="let Img of artImg.Imagepath"><img [src]="Img" alt=""></a>
+           </div>
+           <div class="post-data">
+             <a href="#" class="post-catagory">Art News</a>
+             <div class="post-meta">
+               <a href="#" class="post-title">
+
+                 <h6 (click)="getnewsbyId(artC._id)">{{artC.Caption}}</h6>
+               </a>
+               <p class="post-date"><span>{{artC.NewsTime}}</span> | <span>{{artC.NewsDate}}</span></p>
+
+             </div>
+           </div>
+         </div>
+        </marquee>
+       </div>
+     
+    
+      
+     </div>
+   </div>
+ </div>
+
+ <!-- ##### Featured Post Area End ##### -->
+
+
+
+ <!-- ##### Popular News Area Start ##### -->
+
+ <div class="popular-news-area section-padding-80-50">
+   <div class="container">
+     <div class="row">
+       <div class="col-12 col-lg-8">
+         <div class="section-heading">
+           <h6>Popular News</h6>
+         </div>
+
+         <div class="row">
+
+           <!-- Single Post -->
+           <div class="col-12 col-md-6" *ngFor="let PN1 of _Popularnews1">
+             <div class="single-blog-post style-3" >
+               <div class="post-thumb" *ngFor="let PN1img of PN1.finImages">
+                 <a href="#" *ngFor="let _PN1img of PN1img.Imagepath"><img [src]="_PN1img" alt=""></a>
+               </div>
+               <div class="post-data">
+                 <a href="#" class="post-catagory">{{PN1.NCategory}}</a>
+                 <a href="#" class="post-title">
+                   <h6>{{PN1.Caption}}...</h6>
+                 </a>
+                 <div class="post-meta d-flex align-items-center">
+                   <a href="#" class="post-like"><img src="../assets/img/core-img/like.png" alt=""> <span>392</span></a>
+                   <a href="#" class="post-comment"><img src="../assets/img/core-img/chat.png" alt="">
+                     <span>10</span></a>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+           <!-- Single Post -->
+           <div class="col-12 col-md-6" *ngFor="let PN2 of _Popularnews2">
+             <div class="single-blog-post style-3">
+               <div class="post-thumb" *ngFor="let PN2img of PN2.finImages">
+                 <a href="#" *ngFor="let _PN2img of PN2img.Imagepath"><img [src]="_PN2img" alt=""></a>
+               </div>
+               <div class="post-data">
+                 <a href="#" class="post-catagory">{{PN2.NCategory}}</a>
+                 <a href="#" class="post-title">
+                   <h6>{{PN2.Caption}}...</h6>
+                 </a>
+                 <div class="post-meta d-flex align-items-center">
+                   <a href="#" class="post-like"><img src="../assets/img/core-img/like.png" alt=""> <span>392</span></a>
+                   <a href="#" class="post-comment"><img src="../assets/img/core-img/chat.png" alt="">
+                     <span>10</span></a>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+           <!-- Single Post -->
+           <div class="col-12 col-md-6" *ngFor="let PN3 of _Popularnews3">
+             <div class="single-blog-post style-3">
+               <div class="post-thumb" *ngFor="let PN3img of PN3.finImages">
+                 <a href="#" *ngFor="let _PN3img of PN3img.Imagepath"><img [src]="_PN3img" alt=""></a>
+               </div>
+               <div class="post-data">
+                 <a href="#" class="post-catagory">{{PN3.NCategory}}</a>
+                 <a href="#" class="post-title">
+                   <h6>{{PN3.Caption}}...</h6>
+                 </a>
+                 <div class="post-meta d-flex align-items-center">
+                   <a href="#" class="post-like"><img src="../assets/img/core-img/like.png" alt=""> <span>392</span></a>
+                   <a href="#" class="post-comment"><img src="../assets/img/core-img/chat.png" alt="">
+                     <span>10</span></a>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+           <!-- Single Post -->
+           <div class="col-12 col-md-6" *ngFor="let PN4 of _Popularnews2">
+             <div class="single-blog-post style-3">
+               <div class="post-thumb" *ngFor="let PN4img of PN4.finImages">
+                 <a href="#" *ngFor="let _PN4img of PN4img.Imagepath"><img [src]="_PN4img" alt=""></a>
+               </div>
+               <div class="post-data">
+                 <a href="#" class="post-catagory">{{PN4.NCategory}}</a>
+                 <a href="#" class="post-title">
+                   <h6>{{PN4.Caption}}...</h6>
+                 </a>
+                 <div class="post-meta d-flex align-items-center">
+                   <a href="#" class="post-like"><img src="../assets/img/core-img/like.png" alt=""> <span>392</span></a>
+                   <a href="#" class="post-comment"><img src="../assets/img/core-img/chat.png" alt="">
+                     <span>10</span></a>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+
+       <div class="col-12 col-lg-4">
+         <div class="section-heading">
+           <h6>Info</h6>
+         </div>
+         <!-- Popular News Widget -->
+         <div class="popular-news-widget mb-30">
+           <h3>4 Most Popular News</h3>
+
+           <!-- Single Popular Blog -->
+           <div class="single-popular-post" *ngFor="let mppnews of _mostpopularnews; let i=index">
+             <a href="#" >
+               <h6><span>{{i+1}}.</span> {{mppnews.Caption}}</h6>
+             </a>
+             <p>{{mppnews.NewsDate}}</p>
+           </div>
+
+           <!-- Single Popular Blog -->
+           <div class="single-popular-post">
+             <a href="#">
+               <h6><span>2.</span> Consectetur adipiscing elit. Nam eu metus sit amet odio sodales placer.</h6>
+             </a>
+             <p>April 14, 2018</p>
+           </div>
+
+           <!-- Single Popular Blog -->
+           <div class="single-popular-post">
+             <a href="#">
+               <h6><span>3.</span> Adipiscing elit. Nam eu metus sit amet odio sodales placer. Sed varius leo.</h6>
+             </a>
+             <p>April 14, 2018</p>
+           </div>
+
+           <!-- Single Popular Blog -->
+           <div class="single-popular-post">
+             <a href="#">
+               <h6><span>4.</span> Eu metus sit amet odio sodales placer. Sed varius leo ac...</h6>
+             </a>
+             <p>April 14, 2018</p>
+           </div>
+         </div>
+
+         <!-- Newsletter Widget -->
+         <div class="newsletter-widget">
+           <h4>Newsletter</h4>
+           <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+           <form action="#" method="post">
+             <input type="text" name="text" placeholder="Name">
+             <input type="email" name="email" placeholder="Email">
+             <button type="submit" class="btn w-100">Subscribe</button>
+           </form>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+ <!-- ##### Popular News Area End ##### -->
+
+ <!-- ##### Video Post Area Start ##### -->
+ <div class="video-post-area bg-img bg-overlay" style="background-image: url(../assets/img/bg-img/bg1.jpg);">
+   <div class="container">
+     <div class="row justify-content-center">
+       <!-- Single Video Post -->
+       <div class="col-12 col-sm-6 col-md-4">
+         <div class="single-video-post">
+           <img src="../assets/img/bg-img/video1.jpg" alt="">
+           <!-- Video Button -->
+           <div class="videobtn">
+             <a href="https://www.youtube.com/watch?v=5BQr-j3BBzU" class="videoPlayer"><i class="fa fa-play"
+                 aria-hidden="true"></i></a>
+           </div>
+         </div>
+       </div>
+
+       <!-- Single Video Post -->
+       <div class="col-12 col-sm-6 col-md-4">
+         <div class="single-video-post">
+           <img src="../assets/img/bg-img/video2.jpg" alt="">
+           <!-- Video Button -->
+           <div class="videobtn">
+             <a href="https://www.youtube.com/watch?v=5BQr-j3BBzU" class="videoPlayer"><i class="fa fa-play"
+                 aria-hidden="true"></i></a>
+           </div>
+         </div>
+       </div>
+
+       <!-- Single Video Post -->
+       <div class="col-12 col-sm-6 col-md-4">
+         <div class="single-video-post">
+           <img src="../assets/img/bg-img/video3.jpg" alt="">
+           <!-- Video Button -->
+           <div class="videobtn">
+             <a href="https://www.youtube.com/watch?v=5BQr-j3BBzU" class="videoPlayer"><i class="fa fa-play"
+                 aria-hidden="true"></i></a>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+ <!-- ##### Video Post Area End ##### -->
+
+ <!-- ##### Editorial Post Area Start ##### -->
+ <div class="editors-pick-post-area section-padding-80-50">
+   <div class="container">
+     <div class="row">
+       <!-- Editors Pick -->
+       <div class="col-12 col-md-7 col-lg-9">
+         <div class="section-heading">
+           <h6>Editor’s Pick</h6>
+         </div>
+
+         <div class="row">
+
+           <!-- Single Post -->
+           <div class="col-12 col-lg-4">
+             <div class="single-blog-post">
+               <div class="post-thumb">
+                 <a href="#"><img src="../assets/img/bg-img/1.jpg" alt=""></a>
+               </div>
+               <div class="post-data">
+                 <a href="#" class="post-title">
+                   <h6>Orci varius natoque penatibus et magnis dis parturient montes.</h6>
+                 </a>
+                 <div class="post-meta">
+                   <div class="post-date"><a href="#">February 11, 2018</a></div>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+           <!-- Single Post -->
+           <div class="col-12 col-lg-4">
+             <div class="single-blog-post">
+               <div class="post-thumb">
+                 <a href="#"><img src="../assets/img/bg-img/2.jpg" alt=""></a>
+               </div>
+               <div class="post-data">
+                 <a href="#" class="post-title">
+                   <h6>Orci varius natoque penatibus et magnis dis parturient montes.</h6>
+                 </a>
+                 <div class="post-meta">
+                   <div class="post-date"><a href="#">February 11, 2018</a></div>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+           <!-- Single Post -->
+           <div class="col-12 col-lg-4">
+             <div class="single-blog-post">
+               <div class="post-thumb">
+                 <a href="#"><img src="../assets/img/bg-img/3.jpg" alt=""></a>
+               </div>
+               <div class="post-data">
+                 <a href="#" class="post-title">
+                   <h6>Orci varius natoque penatibus et magnis dis parturient montes.</h6>
+                 </a>
+                 <div class="post-meta">
+                   <div class="post-date"><a href="#">February 11, 2018</a></div>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+           <!-- Single Post -->
+           <div class="col-12 col-lg-4">
+             <div class="single-blog-post">
+               <div class="post-thumb">
+                 <a href="#"><img src="../assets/img/bg-img/4.jpg" alt=""></a>
+               </div>
+               <div class="post-data">
+                 <a href="#" class="post-title">
+                   <h6>Orci varius natoque penatibus et magnis dis parturient montes.</h6>
+                 </a>
+                 <div class="post-meta">
+                   <div class="post-date"><a href="#">February 11, 2018</a></div>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+           <!-- Single Post -->
+           <div class="col-12 col-lg-4">
+             <div class="single-blog-post">
+               <div class="post-thumb">
+                 <a href="#"><img src="../assets/img/bg-img/5.jpg" alt=""></a>
+               </div>
+               <div class="post-data">
+                 <a href="#" class="post-title">
+                   <h6>Orci varius natoque penatibus et magnis dis parturient montes.</h6>
+                 </a>
+                 <div class="post-meta">
+                   <div class="post-date"><a href="#">February 11, 2018</a></div>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+           <!-- Single Post -->
+           <div class="col-12 col-lg-4">
+             <div class="single-blog-post">
+               <div class="post-thumb">
+                 <a href="#"><img src="../assets/img/bg-img/6.jpg" alt=""></a>
+               </div>
+               <div class="post-data">
+                 <a href="#" class="post-title">
+                   <h6>Orci varius natoque penatibus et magnis dis parturient montes.</h6>
+                 </a>
+                 <div class="post-meta">
+                   <div class="post-date"><a href="#">February 11, 2018</a></div>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+
+       <!-- World News -->
+       <div class="col-12 col-md-5 col-lg-3" *ngFor="let wn of _worldNews">
+         <div class="section-heading">
+           <h6>World News</h6>
+         </div>
+
+         <!-- Single Post -->
+         <div class="single-blog-post style-2" *ngFor="let wnImg of wn.finImages">
+           <div class="post-thumb">
+             <a href="#" *ngFor="let img of wnImg.Imagepath"><img [src]="img" alt=""></a>
+           </div>
+           <div class="post-data">
+             <a href="#" class="post-title">
+               <h6>{{wn.Caption}}</h6>
+             </a>
+             <div class="post-meta">
+               <div class="post-date"><a href="#">{{wn.NewsDate}}</a></div>
+             </div>
+           </div>
+         </div>
+
+         <!-- Single Post -->
+         <div class="single-blog-post style-2">
+           <div class="post-thumb">
+             <a href="#"><img src="../assets/img/bg-img/8.jpg" alt=""></a>
+           </div>
+           <div class="post-data">
+             <a href="#" class="post-title">
+               <h6>Orci varius natoque penatibus et magnis</h6>
+             </a>
+             <div class="post-meta">
+               <div class="post-date"><a href="#">February 11, 2018</a></div>
+             </div>
+           </div>
+         </div>
+
+         <!-- Single Post -->
+         <div class="single-blog-post style-2">
+           <div class="post-thumb">
+             <a href="#"><img src="../assets/img/bg-img/9.jpg" alt=""></a>
+           </div>
+           <div class="post-data">
+             <a href="#" class="post-title">
+               <h6>Orci varius natoque penatibus et magnis</h6>
+             </a>
+             <div class="post-meta">
+               <div class="post-date"><a href="#">February 11, 2018</a></div>
+             </div>
+           </div>
+         </div>
+
+         <!-- Single Post -->
+         <div class="single-blog-post style-2">
+           <div class="post-thumb">
+             <a href="#"><img src="../assets/img/bg-img/10.jpg" alt=""></a>
+           </div>
+           <div class="post-data">
+             <a href="#" class="post-title">
+               <h6>Orci varius natoque penatibus et magnis</h6>
+             </a>
+             <div class="post-meta">
+               <div class="post-date"><a href="#">February 11, 2018</a></div>
+             </div>
+           </div>
+         </div>
+
+         <!-- Single Post -->
+         <div class="single-blog-post style-2">
+           <div class="post-thumb">
+             <a href="#"><img src="../assets/img/bg-img/11.jpg" alt=""></a>
+           </div>
+           <div class="post-data">
+             <a href="#" class="post-title">
+               <h6>Orci varius natoque penatibus et magnis</h6>
+             </a>
+             <div class="post-meta">
+               <div class="post-date"><a href="#">February 11, 2018</a></div>
+             </div>
+           </div>
+         </div>
+
+       </div>
+     </div>
+   </div>
+ </div>
+ <!-- ##### Editorial Post Area End ##### -->
+
+ <!--News Pop-up -->
+ <div>
+
+ </div>
